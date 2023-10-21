@@ -76,6 +76,12 @@
             <artifactId>knife4j-openapi2-spring-boot-starter</artifactId>
             <version>4.3.0</version>
         </dependency>
+        <!--https://github.com/alibaba/fastjson/wiki/%E5%9C%A8-Spring-%E4%B8%AD%E9%9B%86%E6%88%90-Fastjson-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.32</version>
+        </dependency>
 
     </dependencies>
 
