@@ -1,0 +1,20 @@
+spring:
+  mail:
+    host: smtp.163.com  # 163邮箱的smtp HAXKDYSCOCFZWCZL mM@+auvUVL-wv9W
+    username: youEmile
+    password: EmilePassword
+    port: 25
+    properties:
+      mail:
+        default-encoding: utf-8
+        smtp:
+          # 连接超时时间
+          connectionTimeout: 5000
+          # 发送超时时间
+          timeout: 3000
+          # 写入超时时间
+          writeTimeout: 5000
+          auth: true
+          starttls:
+            required: true
+            enable: true

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <!--标识百度适应pc和mobile-->
+    <meta name="applicable-device" content="pc,mobile">
+    <!--禁止百度转码-->
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!--启用360浏览器的极速模式-->
+    <meta name="renderer" content="webkit"/>
+    <!-- 强制Chromium内核，作用于其他双核浏览器 -->
+    <meta name="force-rendering" content="webkit"/>
+    <!--优先使用 IE 最新版本和 Chrome-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--避免IE使用兼容模式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓-->
+    <meta name="HandheldFriendly" content="true"/>
+    <!--搜索引擎蜘蛛-->
+    <meta name="Baiduspider" content="index,follow,noarchive"/>
+    <meta name="robots" content="index,follow"/>
+    <!--作者及版权-->
+    <meta name="author" content="Start"/>
+    <meta name="copyright" content="stc"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>仿12306邮箱验证码</title>
+    <meta name="keywords" content="邮箱验证码"/>
+    <meta name="description" content="注册或登录邮箱验证码"/>
+    <style>
+        .contact-clean {
+            background: #f1f7fc;
+            padding: 80px 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            .contact-clean {
+                padding: 20px 0;
+            }
+        }
+
+        .contact-clean form {
+            max-width: 480px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 4px;
+            color: #505e6c;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767px) {
+            .contact-clean form {
+                padding: 30px;
+            }
+        }
+
+        .contact-clean h2 {
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 36px;
+            color: inherit;
+        }
+
+        .contact-clean .form-group:last-child {
+            margin-bottom: 5px;
+        }
+
+        .contact-clean form .form-control {
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+            outline: none;
+            color: inherit;
+            padding-left: 12px;
+            height: 42px;
+        }
+
+        .contact-clean form .form-control:focus {
+            border: 1px solid #b2b2b2;
+        }
+
+        .contact-clean form textarea.form-control {
+            min-height: 100px;
+            max-height: 260px;
+            padding-top: 10px;
+            resize: vertical;
+        }
+
+        .contact-clean form .btn {
+            padding: 16px 32px;
+            border: none;
+            background: none;
+            box-shadow: none;
+            text-shadow: none;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            line-height: 1;
+            outline: none !important;
+        }
+
+        .contact-clean form .btn:hover {
+            opacity: 1;
+        }
+
+        .contact-clean form .btn:active {
+            transform: translateY(1px);
+        }
+
+        .contact-clean form .btn-primary {
+            background-color: #055ada !important;
+            margin-top: 15px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="contact-clean">
+    <form method="post">
+        <h2 class="text-center">邮箱验证码</h2>
+        <p th:text="|${government} : |"></p>
+        <p th:text="${suggestion}"></p>
+        <div class="alert alert-danger" role="alert"><span
+                th:utext="|<strong>注意</strong> 请在收到通知后 &nbsp; ${deadline} &nbsp;(15分钟内)时限使用。请立即访问<a href='https://www.f12306.staro.com'>仿12306购票系统</a>|"></span>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text" th:text="|${secret}|"></p>
+                <p class="card-text">网址：<a th:href="${url}" target="_blank"
+                                                    th:text="${url}"></a></p>
+                <p class="card-text" th:text="${officeName} + '发布，' +  ${createTime}"></p>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
