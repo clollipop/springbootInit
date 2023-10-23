@@ -1,12 +1,10 @@
 package com.star.springbootinit.mapper;
-
-import generator.domain.User;
+import com.star.springbootinit.model.entity.User;
+import java.util.List;
 
 /**
 * @author PC
 * @description 针对表【user(用户表)】的数据库操作Mapper
-* @createDate 2023-10-21 17:01:48
-* @Entity generator.domain.User
 */
 public interface UserMapper {
 
@@ -21,5 +19,7 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    List<String> searchUserPermissions(Long id);
 
 }

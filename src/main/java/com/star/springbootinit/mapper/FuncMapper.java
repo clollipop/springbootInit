@@ -1,11 +1,10 @@
 package com.star.springbootinit.mapper;
 
-import generator.domain.Func;
+import com.star.springbootinit.model.entity.Func;
 
 /**
 * @author PC
 * @description 针对表【func(权限表)】的数据库操作Mapper
-* @createDate 2023-10-21 17:03:17
 * @Entity generator.domain.Func
 */
 public interface FuncMapper {
