@@ -19,7 +19,8 @@ import javax.annotation.Resource;
 @Configuration
 public class SaTokenConfigure {
     // Sa-Token 参数配置，参考文档：https://sa-token.cc
-    @Resource
+    @Bean
+    @Primary
     public SaTokenConfig getSaTokenConfigPrimary() {
         SaTokenConfig config = new SaTokenConfig();
         config.setTokenName("token");             // token名称 (同时也是cookie名称)
