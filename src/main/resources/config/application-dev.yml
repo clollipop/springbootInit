@@ -1,3 +1,6 @@
+server:
+  # 端口
+  port: 8881
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -52,8 +55,12 @@ spring:
           starttls:
             required: true
             enable: true
-server:
-  # 端口
-  port: 8881
 
+
+logging:
+  level:
+    root: info
+    com.example.hospital.api.db.dao: warn
+  pattern:
+    console: "%d{yyyy/MM/dd HH:mm:ss}  %-5level  %msg%n"
 

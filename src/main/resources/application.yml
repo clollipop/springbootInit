@@ -1,1 +1,25 @@
+server:
+  jetty:
+    threads:
+      acceptors: 4
+      selectors: 8
+      min: 8
+      max: 200
+  port: 8092
+  servlet:
+    context-path: /api
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 20MB
 
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.star.springbootinit.model.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
