@@ -31,7 +31,7 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class LogAspect {
     public LogAspect() {
-        System.out.println("Common LogAspect");
+        System.out.println("通用api层 日志切面");
     }
 
     private final static Logger LOG = LoggerFactory.getLogger(LogAspect.class);
@@ -39,7 +39,7 @@ public class LogAspect {
     /**
      * 定义一个切点
      */
-    @Pointcut("execution(public * com.star..*Controller.*(..))")
+    @Pointcut("execution(public * com.star..*api.*(..))")
     public void controllerPointcut() {
     }
 

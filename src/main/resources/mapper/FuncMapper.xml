@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="generator.mapper.FuncMapper">
 
-    <resultMap id="BaseResultMap" type="generator.domain.Func">
+    <resultMap id="BaseResultMap" type="com.star.springbootinit.model.entity.Func">
             <id property="funcId" column="funcId" jdbcType="BIGINT"/>
             <result property="parentId" column="parentId" jdbcType="BIGINT"/>
             <result property="funcName" column="funcName" jdbcType="VARCHAR"/>
@@ -36,7 +36,7 @@
         delete from func
         where  funcId = #{funcId,jdbcType=BIGINT} 
     </delete>
-    <insert id="insert" keyColumn="funcId" keyProperty="funcId" parameterType="generator.domain.Func" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="funcId" keyProperty="funcId" parameterType="com.star.springbootinit.model.entity.Func" useGeneratedKeys="true">
         insert into func
         ( funcId,parentId,funcName
         ,funcUrl,funcType,status
@@ -47,7 +47,7 @@
         ,#{createBy,jdbcType=VARCHAR},#{updateBy,jdbcType=VARCHAR},#{sortNum,jdbcType=INTEGER}
         ,#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP})
     </insert>
-    <insert id="insertSelective" keyColumn="funcId" keyProperty="funcId" parameterType="generator.domain.Func" useGeneratedKeys="true">
+    <insert id="insertSelective" keyColumn="funcId" keyProperty="funcId" parameterType="com.star.springbootinit.model.entity.Func" useGeneratedKeys="true">
         insert into func
         <trim prefix="(" suffix=")" suffixOverrides=",">
                 <if test="funcId != null">funcId,</if>
@@ -76,7 +76,7 @@
                 <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="generator.domain.Func">
+    <update id="updateByPrimaryKeySelective" parameterType="com.star.springbootinit.model.entity.Func">
         update func
         <set>
                 <if test="parentId != null">
@@ -112,7 +112,7 @@
         </set>
         where   funcId = #{funcId,jdbcType=BIGINT} 
     </update>
-    <update id="updateByPrimaryKey" parameterType="generator.domain.Func">
+    <update id="updateByPrimaryKey" parameterType="com.star.springbootinit.model.entity.Func">
         update func
         set 
             parentId =  #{parentId,jdbcType=BIGINT},
