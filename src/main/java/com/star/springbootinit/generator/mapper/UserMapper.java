@@ -5,7 +5,7 @@ import generator.domain.User;
 /**
 * @author PC
 * @description 针对表【user(用户表)】的数据库操作Mapper
-* @createDate 2023-10-21 17:05:35
+* @createDate 2023-10-28 18:28:02
 * @Entity generator.domain.User
 */
 public interface UserMapper {

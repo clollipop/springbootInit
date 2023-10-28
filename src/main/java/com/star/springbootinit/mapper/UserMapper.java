@@ -20,6 +20,11 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
+    /**
+     * 查询用户对应的权限
+     * @param id
+     * @return
+     */
     List<String> searchUserPermissions(Long id);
 
 }

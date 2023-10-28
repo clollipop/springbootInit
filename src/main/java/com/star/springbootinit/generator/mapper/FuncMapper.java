@@ -5,7 +5,7 @@ import generator.domain.Func;
 /**
 * @author PC
 * @description 针对表【func(权限表)】的数据库操作Mapper
-* @createDate 2023-10-21 17:05:14
+* @createDate 2023-10-28 18:27:40
 * @Entity generator.domain.Func
 */
 public interface FuncMapper {
