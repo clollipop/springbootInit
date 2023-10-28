@@ -1,0 +1,44 @@
+package com.star.springbootinit.generator.domain;
+
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
+
+/**
+ * 角色表
+ * @TableName role
+ */
+@Data
+public class Role implements Serializable {
+    /**
+     * 角色id
+     */
+    private Long roleId;
+
+    /**
+     * 角色名称
+     */
+    private String roleName;
+
+    /**
+     * 角色备注（描述）
+     */
+    private String remark;
+
+    /**
+     * 创建者
+     */
+    private String createBy;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
+}
