@@ -26,9 +26,14 @@ public class Func implements Serializable {
     private String funcName;
 
     /**
-     * 功能代码 user:create
+     * 路径 /userManager
      */
     private String funcUrl;
+
+    /**
+     * 权限代码 sys:dept:add
+     */
+    private String funcCode;
 
     /**
      * 功能类型1：目录、2：菜单、3：按钮

@@ -9,13 +9,15 @@
             <result property="roleName" column="roleName" jdbcType="VARCHAR"/>
             <result property="remark" column="remark" jdbcType="VARCHAR"/>
             <result property="createBy" column="createBy" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="TINYINT"/>
             <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         roleId,roleName,remark,
-        createBy,createTime,updateTime
+        createBy,status,createTime,
+        updateTime
     </sql>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -32,11 +34,11 @@
     <insert id="insert" keyColumn="roleId" keyProperty="roleId" parameterType="com.star.springbootinit.model.entity.Role" useGeneratedKeys="true">
         insert into role
         ( roleId,roleName,remark
-        ,createBy,createTime,updateTime
-        )
+        ,createBy,status,createTime
+        ,updateTime)
         values (#{roleId,jdbcType=BIGINT},#{roleName,jdbcType=VARCHAR},#{remark,jdbcType=VARCHAR}
-        ,#{createBy,jdbcType=VARCHAR},#{createTime,jdbcType=TIMESTAMP},#{updateTime,jdbcType=TIMESTAMP}
-        )
+        ,#{createBy,jdbcType=VARCHAR},#{status,jdbcType=TINYINT},#{createTime,jdbcType=TIMESTAMP}
+        ,#{updateTime,jdbcType=TIMESTAMP})
     </insert>
     <insert id="insertSelective" keyColumn="roleId" keyProperty="roleId" parameterType="com.star.springbootinit.model.entity.Role" useGeneratedKeys="true">
         insert into role
@@ -45,6 +47,7 @@
                 <if test="roleName != null">roleName,</if>
                 <if test="remark != null">remark,</if>
                 <if test="createBy != null">createBy,</if>
+                <if test="status != null">status,</if>
                 <if test="createTime != null">createTime,</if>
                 <if test="updateTime != null">updateTime,</if>
         </trim>
@@ -53,6 +56,7 @@
                 <if test="roleName != null">#{roleName,jdbcType=VARCHAR},</if>
                 <if test="remark != null">#{remark,jdbcType=VARCHAR},</if>
                 <if test="createBy != null">#{createBy,jdbcType=VARCHAR},</if>
+                <if test="status != null">#{status,jdbcType=TINYINT},</if>
                 <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
                 <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
         </trim>
@@ -69,6 +73,9 @@
                 <if test="createBy != null">
                     createBy = #{createBy,jdbcType=VARCHAR},
                 </if>
+                <if test="status != null">
+                    status = #{status,jdbcType=TINYINT},
+                </if>
                 <if test="createTime != null">
                     createTime = #{createTime,jdbcType=TIMESTAMP},
                 </if>
@@ -84,6 +91,7 @@
             roleName =  #{roleName,jdbcType=VARCHAR},
             remark =  #{remark,jdbcType=VARCHAR},
             createBy =  #{createBy,jdbcType=VARCHAR},
+            status =  #{status,jdbcType=TINYINT},
             createTime =  #{createTime,jdbcType=TIMESTAMP},
             updateTime =  #{updateTime,jdbcType=TIMESTAMP}
         where   roleId = #{roleId,jdbcType=BIGINT} 

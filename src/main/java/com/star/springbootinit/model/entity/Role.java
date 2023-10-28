@@ -7,6 +7,7 @@ import java.util.Date;
 
 /**
  * 角色表
+ *
  * @TableName role
  */
 @Data
@@ -30,6 +31,11 @@ public class Role implements Serializable {
      * 创建者
      */
     private String createBy;
+
+    /**
+     * 状态(0正常 1禁用)
+     */
+    private Integer status;
 
     /**
      * 创建时间

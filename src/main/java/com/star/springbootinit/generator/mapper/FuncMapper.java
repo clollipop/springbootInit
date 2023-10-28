@@ -1,11 +1,11 @@
-package generator.mapper;
+package com.star.springbootinit.generator.mapper;
 
-import generator.domain.Func;
+import com.star.springbootinit.generator.domain.Func;
 
 /**
 * @author PC
 * @description 针对表【func(权限表)】的数据库操作Mapper
-* @createDate 2023-10-28 18:27:40
+* @createDate 2023-10-28 21:03:03
 * @Entity generator.domain.Func
 */
 public interface FuncMapper {

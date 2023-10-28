@@ -1,11 +1,11 @@
-package generator.mapper;
+package com.star.springbootinit.generator.mapper;
 
-import generator.domain.User;
+import com.star.springbootinit.generator.domain.User;
 
 /**
 * @author PC
 * @description 针对表【user(用户表)】的数据库操作Mapper
-* @createDate 2023-10-28 18:28:02
+* @createDate 2023-10-28 21:03:23
 * @Entity generator.domain.User
 */
 public interface UserMapper {

@@ -1,11 +1,11 @@
-package generator.mapper;
+package com.star.springbootinit.generator.mapper;
 
-import generator.domain.Role;
+import com.star.springbootinit.generator.domain.Role;
 
 /**
 * @author PC
 * @description 针对表【role(角色表)】的数据库操作Mapper
-* @createDate 2023-10-28 18:27:55
+* @createDate 2023-10-28 21:03:18
 * @Entity generator.domain.Role
 */
 public interface RoleMapper {

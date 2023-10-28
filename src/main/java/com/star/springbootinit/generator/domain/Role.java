@@ -31,6 +31,11 @@ public class Role implements Serializable {
     private String createBy;
 
     /**
+     * 状态(0正常 1禁用)
+     */
+    private Integer status;
+
+    /**
      * 创建时间
      */
     private Date createTime;
