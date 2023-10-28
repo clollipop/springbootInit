@@ -22,7 +22,7 @@ spring:
     # Redis服务器连接端口
     port: 6379
     # Redis服务器连接密码（默认为空）
-#    password: root
+    #    password: root
     # 连接超时时间
     timeout: 10s
     lettuce:
@@ -35,6 +35,10 @@ spring:
         max-idle: 10
         # 连接池中的最小空闲连接
         min-idle: 0
+  # 支持 swagger3
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   # email 配置
   mail:
     host: smtp.163.com  # 163邮箱的smtp HAXKDYSCOCFZWCZL mM@+auvUVL-wv9W

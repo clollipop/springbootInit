@@ -9,6 +9,8 @@ server:
   servlet:
     context-path: /api
 spring:
+  application:
+    name: spring-init
   profiles:
     active: dev
   servlet:
