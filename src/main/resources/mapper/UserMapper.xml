@@ -28,6 +28,12 @@
                      and f.funcId=rf.funcId
                      and u.userId = #{userId,jdbcType=BIGINT};
     </select>
+    <select id="searchUserRole" parameterType="long" resultType="string">
+        select r.funcCode from user u ,userRole ur,role r
+        where u.userId = ur.userId
+          and r.roleId=ur.roleId
+          and u.userId = #{userId,jdbcType=BIGINT};
+    </select>
     <sql id="Base_Column_List">
         userId
         ,userAccount,userPassword,

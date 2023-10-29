@@ -27,4 +27,12 @@ public interface UserMapper {
      */
     List<String> searchUserPermissions(Long id);
 
+    /**
+     * 查询用户对应的角色标识
+     * @param id
+     * @return
+     */
+    List<String> searchUserRole(Long id);
+
+
 }
