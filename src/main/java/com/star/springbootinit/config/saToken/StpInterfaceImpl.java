@@ -1,4 +1,4 @@
-package com.star.springbootinit.config;
+package com.star.springbootinit.config.saToken;
 
 import cn.dev33.satoken.stp.StpInterface;
 import com.star.springbootinit.mapper.UserMapper;
@@ -31,6 +31,8 @@ public class StpInterfaceImpl implements StpInterface {
      */
     @Override
     public List<String> getRoleList(Object loginId, String loginKey) {
+        Long userId = Long.parseLong(loginId.toString());
+        userMapper.searchUserRole(userId);
         return null;
     }
 
