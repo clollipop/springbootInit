@@ -29,7 +29,7 @@ public class Knife4jConfiguration {
                         .build())
                 .select()
                 //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.star.springbootinit.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.star.springbootinit.api"))
                 .paths(PathSelectors.any())
                 .build();
     }
