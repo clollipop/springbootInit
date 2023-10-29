@@ -87,19 +87,19 @@ values ('star_1','123456','1289232@qq.com',18188290381,1,'帅管理员','这个�
 
 -- 添加角色
 insert into role(roleName,remark,createBy)
-values ('系统超级管理员','系统超级管理员角色','star');
+values ('admin','系统超级管理员角色','star');
 
 insert into role(roleName,remark,createBy)
-values ('平台管理员','平台管理员','star');
+values ('platform','平台管理员','star');
 
 insert into role(roleName,remark,createBy)
-values ('超级会员用户','开通超级会员用户','star');
+values ('svip','开通超级会员用户','star');
 
 insert into role(roleName,remark,createBy)
-values ('会员用户','开通会员用户','star');
+values ('vip','开通会员用户','star');
 
 insert into role(roleName,remark,createBy)
-values ('普通用户','注册默认角色','star');
+values ('user','注册默认角色','star');
 
 -- 添加权限
 insert into func(funcName,funcUrl,createBy,sortNum)
