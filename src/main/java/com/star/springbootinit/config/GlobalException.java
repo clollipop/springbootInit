@@ -1,8 +1,8 @@
 package com.star.springbootinit.config;
 
 import com.star.springbootinit.exception.BaseException;
-import com.star.springbootinit.tools.resp.ErrorResult;
-import com.star.springbootinit.tools.resp.ResultCode;
+import com.star.springbootinit.common.resp.ErrorResult;
+import com.star.springbootinit.common.resp.ResultCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import static com.star.springbootinit.tools.resp.ResultCode.PARAMETER_EXCEPTION;
+import static com.star.springbootinit.common.resp.ResultCode.PARAMETER_EXCEPTION;
 
 /**
  * @Auther: Star
@@ -66,7 +66,6 @@ public class GlobalException {
      */
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ErrorResult parameterBodyMissingExceptionHandler(HttpServletRequest req, HttpMessageNotReadableException e) {
-        log.error(e.getMessage(), e);
         return ErrorResult.error(PARAMETER_EXCEPTION, "参数体不能为空");
     }
 
@@ -121,6 +120,10 @@ public class GlobalException {
             if (!errors.isEmpty()) {
                 // 这里列出了全部错误参数，按正常逻辑，只需要第一条错误即可
                 FieldError fieldError = (FieldError) errors.get(0);
+                // 但是在日志上面需要进行全部打印，方便快速更改
+                String s = formatAllErrorMessages(errors);
+                // 日志打印
+                log.error("参数错误："+s);
                 return ErrorResult.error(PARAMETER_EXCEPTION, fieldError.getDefaultMessage());
             }
         }

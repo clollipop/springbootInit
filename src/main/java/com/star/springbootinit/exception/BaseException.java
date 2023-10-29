@@ -1,6 +1,6 @@
 package com.star.springbootinit.exception;
 
-import com.star.springbootinit.tools.resp.ResultCode;
+import com.star.springbootinit.common.resp.ResultCode;
 import lombok.Data;
 
 /**

@@ -1,4 +1,4 @@
-package com.star.springbootinit.tools.resp;
+package com.star.springbootinit.common.resp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
