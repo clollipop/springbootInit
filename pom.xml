@@ -21,10 +21,6 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <exclusions>
                 <exclusion>
@@ -33,7 +29,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!--https://eclipse.dev/jetty/documentation/jetty-12/operations-guide/index.html-->
+        <!--替换tomcat容器：https://eclipse.dev/jetty/documentation/jetty-12/operations-guide/index.html-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jetty</artifactId>
@@ -53,6 +49,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!--参数校验-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <!--邮箱-->
         <dependency>
@@ -123,11 +124,6 @@
             <artifactId>sa-token-dao-redis</artifactId>
             <version>${saToken.version}</version>
         </dependency>
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-spring-aop</artifactId>
-            <version>${saToken.version}</version>
-        </dependency>
         <!-- 提供Redis连接池 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -141,6 +137,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <!--数据拷贝 示例：https://cloud.tencent.com/developer/article/1880392 官方文档：https://orika-mapper.github.io/orika-docs/-->
+        <dependency>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
+            <version>1.5.4</version>
         </dependency>
     </dependencies>
 
