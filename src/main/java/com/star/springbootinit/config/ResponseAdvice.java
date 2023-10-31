@@ -21,7 +21,7 @@ import java.util.Objects;
 
 /**
  * @Auther: Star
- * @Description:  全局统一返回
+ * @Description:  全局统一返回 RestControllerAdvice 表示这是一个全局控制器增强类，用于处理 Controller 层的响应体
  * @Version: 1.0
  */
 @RestControllerAdvice

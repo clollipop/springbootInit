@@ -11,7 +11,6 @@ import java.lang.reflect.Method;
 
 /**
  * @Auther: Star
- * @Date: 2023-06-14
  * @Description: com.staro.train.common.Interceptor 响应结果拦截器
  * @Version: 1.0
  */
