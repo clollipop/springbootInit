@@ -9,7 +9,6 @@ import lombok.Data;
  * </p>
  *
  * @author: Star
- * @Date: 2023-10-21
  * @Description: com.star.springbootinit.exception
  * @Version: 1.0
  */
