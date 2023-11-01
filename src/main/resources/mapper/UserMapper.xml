@@ -20,20 +20,60 @@
         <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
         <result property="updateTime" column="updateTime" jdbcType="TIMESTAMP"/>
     </resultMap>
+    <!--获取用户权限-->
     <select id="searchUserPermissions" parameterType="Long" resultType="string">
-        select f.funcCode from user u ,userRole ur,role r,roleFunc rf, func f
-                   where u.userId = ur.userId
-                     and r.roleId=ur.roleId
-                     and r.roleId = rf.roleId
-                     and f.funcId=rf.funcId
-                     and u.userId = #{userId,jdbcType=BIGINT};
-    </select>
-    <select id="searchUserRole" parameterType="long" resultType="string">
-        select r.funcCode from user u ,userRole ur,role r
+        select f.funcCode
+        from user u,
+             userRole ur,
+             role r,
+             roleFunc rf,
+             func f
         where u.userId = ur.userId
-          and r.roleId=ur.roleId
+          and r.roleId = ur.roleId
+          and r.roleId = rf.roleId
+          and f.funcId = rf.funcId
           and u.userId = #{userId,jdbcType=BIGINT};
     </select>
+    <!--获取用户角色-->
+    <select id="searchUserRole" parameterType="long" resultType="string">
+        select r.funcCode
+        from user u,
+             userRole ur,
+             role r
+        where u.userId = ur.userId
+          and r.roleId = ur.roleId
+          and u.userId = #{userId,jdbcType=BIGINT};
+    </select>
+    <!--判断用户和密码是否正确-->
+    <select id="login" parameterType="com.star.springbootinit.model.entity.User"
+            resultType="com.star.springbootinit.model.entity.User">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where 1=1
+        <if test="userAccount!=null">
+        and userAccount=#{userAccount}
+        </if>
+
+        <if test="email!=null">
+        and email=#{email}
+        </if>
+        and userPassword=#{userPassword}
+
+
+    </select>
+    <!--获取用户信息 分页-->
+    <select id="userInfoPage" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List"/>
+        from user
+    </select>
+    <!--更新用户IP-->
+    <update id="updateIp" parameterType="map">
+        update user
+        set loginIp = #{ip,jdbcType=VARCHAR}
+        where userId = #{userId,jdbcType=BIGINT}
+    </update>
     <sql id="Base_Column_List">
         userId
         ,userAccount,userPassword,
